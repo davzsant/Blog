@@ -15,6 +15,11 @@ class Users extends AbstractMigration
     public function change(): void
     {
         $table = $this->table('users');
+        $table->addColumn('name','string',[
+            'default'=> null,
+            'null' => false,
+            'limit' => 70
+        ]);
         $table->addColumn('userName','string',[
             'default'=> null,
             'null' => false,
@@ -30,6 +35,10 @@ class Users extends AbstractMigration
             'null' => false,
             'limit' => 18
         ]);
+        $table->addColumn('bio','text',[
+            'default'=> null,
+        ]);
+
         $table->addIndex('email',options: ['unique'=> true]);
         $table->create();
     }

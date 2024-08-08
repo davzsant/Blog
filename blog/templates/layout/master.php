@@ -11,9 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <?= $this->fetch('navbar')?>
         <?= $this->fetch('content')?>
-        <?= $this->fetch('footer')?>
 
     </div>
 </body>

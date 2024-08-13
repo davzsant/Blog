@@ -6,17 +6,17 @@ namespace App\Controller;
 use Cake\Datasource\ConnectionManager;
 
 /**
- * User Controller
+ * Post Controller
  *
  */
-class UserController extends AppController
+class PostController extends AppController
 {
-    public function show(){
+    public function show()
+    {
         $id = $this->request->getParam("id");
         $connection = ConnectionManager::get("default");
-        $user =  $connection->execute("SELECT * FROM users WHERE id = :id",["id"=> $id])->fetch('obj');
-        $this->set(compact("user"));
+        $post =  $connection->execute("SELECT * FROM posts WHERE id = :id",["id"=> $id])->fetch('obj');
+        $this->set(compact("post"));
         return $this->render('show','master');
-
     }
 }

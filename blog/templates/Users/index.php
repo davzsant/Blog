@@ -1,6 +1,8 @@
 <h1>Usuarios</h1>
 <ul>
 <?php foreach($users as $user):?>
-    <li><?= $user->userName ?></li>
+    <a href="/users/<?= $user->id?>">
+        <li><?= $user->name ?></li>
+    </a>
 <?php endforeach;?>
 </ul>
